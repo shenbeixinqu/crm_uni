@@ -1,11 +1,186 @@
 <template>
-<view>
-	
-	<foot-part @openLogin="openLogin"></foot-part>
-		
-</view>
-	
-		
+	<view class="content" style="position:relative; top:0;">
+		<!-- 头部轮播图 -->
+		<view class="banner-part">
+			<swiper class="banner-swiper" :autoplay="true" :interval="3000" :circular="true">
+				<swiper-item v-for="(item,index) in bannerList" :key="index" @tap="goImg()">
+					<image class="swiper-img" :src="imgurl+item.image" mode="aspectFit"></image>
+				</swiper-item>
+				<!-- <swiper-item v-for="(item,index) in bannerList" :key="index" @tap="goJump(item)">
+					<image class="swiper-img" :src="imgurl+item.image" mode="aspectFit"></image>
+				</swiper-item> -->
+			</swiper>
+			<!-- <view class="rule-btn">规则</view> -->
+		</view>
+		<!-- 菜单 -->
+		<view class="menu-part main">
+			<!-- <view class="menu-item" v-for="(v,vind) in menuList" :key="vind" @tap="goPage(v)">
+				<image class="menu-img" :src="$imgurl+v.img_url" mode="aspectFit"></image>
+				<view class="menu-text">{{v.category}}</view>
+			</view> -->
+			<!-- <view class="menu-item" v-for="(item,index) in menuList" :key="index" @tap="goJumpToDetail(item)">
+				<image class="menu-img" :src="imgurl+item.image" mode="aspectFit"></image>
+				<view class="menu-text">{{item.img_name}}</view>
+			</view> -->
+			<view class="lately">最近浏览</view>
+			<view class="leftWrap" @tap="toLeft()">
+				<view class="lefticon"></view>
+			</view>
+			<view class="rightWrap" @tap="toRight()">
+				<view class="righticon"></view>
+			</view>
+			<!-- 未登录或者浏览记录为0 ===显示推荐数据-->
+			<swiper class="swiper" :current="curDot" @change="swiperChange" v-if="user_id=='' || recentData.length==0">
+				<swiper-item class="swiper-inner d-between">
+					<view class="menu-item" v-for="(item,index) in recentDataOne" :key="index" @tap="goDetail(item)">
+						<image class="menu-img" :src="imgurl+item.url" mode="aspectFit"></image>
+						<view class="menu-text">{{item.name}}</view>
+					</view>
+				</swiper-item>
+				<swiper-item class="swiper-inner d-between">
+					<view class="menu-item" v-for="(item,index) in recentDataTwo" :key="index" @tap="goDetail(item)">
+						<image class="menu-img" :src="imgurl+item.url" mode="aspectFit"></image>
+						<view class="menu-text">{{item.name}}</view>
+					</view>
+				</swiper-item>
+			</swiper>
+			<!-- 已经登录并且有浏览记录 -->
+			<view v-else>
+				<!-- 浏览数据小于4条 -->
+				<swiper class="swiper" :current="curDot" @change="swiperChange" v-if="recentData.length<=3">
+					<swiper-item class="swiper-inner">
+						<view class="menu-item" v-for="(item,index) in recentData" :key="index" @tap="goDetail(item)">
+							<image class="menu-img" :src="imgurl+item.url" mode="aspectFit"></image>
+							<view class="menu-text">{{item.name}}</view>
+						</view>
+					</swiper-item>
+				</swiper>
+				<!-- 浏览数据大于4条 -->
+				<swiper class="swiper" :current="curDot" @change="swiperChange" v-else>
+					<swiper-item class="swiper-inner">
+						<view class="menu-item" v-for="(item,index) in recentDataOne" :key="index" @tap="goDetail(item)">
+							<image class="menu-img" :src="imgurl+item.url" mode="aspectFit"></image>
+							<view class="menu-text">{{item.name}}</view>
+						</view>
+					</swiper-item>
+					<swiper-item class="swiper-inner">
+						<view class="menu-item" v-for="(item,index) in recentDataTwo" :key="index" @tap="goDetail(item)">
+							<image class="menu-img" :src="imgurl+item.url" mode="aspectFit"></image>
+							<view class="menu-text">{{item.name}}</view>
+						</view>
+					</swiper-item>
+				</swiper>
+			</view>
+		</view>
+		<!-- 广告 -->
+		<swiper class="ggw-img" :autoplay="true" :interval="3000" :circular="true">
+			<!-- <swiper-item v-for="(item,index) in ggwList" :key="index" @tap="goJump(item)">
+				<image class="swiper-img" :src="imgurl+item.image" mode="aspectFit"></image>
+			</swiper-item> -->
+			<swiper-item v-for="(item,index) in ggwList" :key="index" @tap="goJoinParty()">
+				<image class="swiper-img" :src="imgurl+item.image" mode="aspectFit"></image>
+			</swiper-item>
+		</swiper>
+		<!-- 通知滚动 -->
+		<view class="new-part main">
+			<image class="new-img" src='https://shop.pangu.mobi/static/mobile/tz.png' mode="aspectFit"></image>
+			<!-- :autoplay="true" :interval="3000" :circular="true" -->
+			<swiper class="new-swiper" v-if="newsList.length>0">
+				<swiper-item v-for="(v,vind) in newsList" :key="vind">
+					<view class="new-text oline">恭喜{{v.name}}通过提交线索获取佣金{{v.money}}元<span>刚刚</span></view>
+				</swiper-item>
+			</swiper>
+		</view>
+		<view class="greybar"></view>
+		<!-- 产品列表 -->
+		<!-- :class="isFixed?'tab-part fixdItem':'tab-part'" -->
+		<view class="tab-part fixdItem" id="scrollId">
+			<view style="position:relative; float:left;">
+				<view class="all-item recommended" @tap="jumpToRecommended()">推荐</view>
+				<view :class="['tab-item img-item',recommeded?'tab-active-tj':'']">
+					<image class="tabbg-img1 tj" src="https://shop.pangu.mobi/static/mobile/nav-bg.png" mode=""></image>
+					<!-- <image class="tabbg-img1 tj" src="https://shop.pangu.mobi/static/mobile/tabBg1.png" mode=""></image>
+					<image class="tabbg-img2 tj" src="https://shop.pangu.mobi/static/mobile/tabBg2.png" mode=""></image> -->
+				</view>
+			</view>
+			<view class="tab-scroll-part">
+				<view class="scroll-item" v-for="(v,vind) in tabList" :key="vind">
+					<view class="tab-item" @tap="changeTab(v)">{{v.category}}</view>
+					<view :class="['tab-item img-item',selectTab==v.id?'tab-active':'']">
+						<image class="tabbg-img1" src="https://shop.pangu.mobi/static/mobile/nav-bg.png" mode=""></image>
+					</view>
+				</view>
+				<view class="all-item all" @tap="goProduct()">全部产品</view>
+			</view>
+		</view>
+		<!-- 推荐的数据 -->
+		<view class="main" v-if="recommeded">
+			<!-- <scroll-view scroll-y @scrolltolower="getNextData" class="list-part"> -->
+			<view v-if="recommendedData.length==0" class="nodata-part" style="padding-top:100rpx">
+				<image class="nodata-img" src="https://shop.pangu.mobi/static/mobile/nodata.jpg" mode="aspectFit"></image>
+				<view class="nodata-text">暂无内容</view>
+			</view>
+			<view v-else class="list-item" v-for="(item,index) in recommendedData" :key="index" @tap="goDetail(item)">
+				<image class="list-img" :src="imgurl+item.img_url" mode="aspectFit"></image>
+				<view class="list-text tline">{{item.pro_name}}</view>
+				<view class="subtit">{{item.slogan}}</view>
+			</view>
+			<!-- </scroll-view> -->
+		</view>
+		<!-- 其他产品 -->
+		<view class="main" v-else>
+			<scroll-view scroll-y @scrolltolower="getNextData" class="list-part">
+				<view v-if="dataList.length==0" class="nodata-part" style="padding-top:100rpx">
+					<image class="nodata-img" src="https://shop.pangu.mobi/static/mobile/nodata.jpg" mode="aspectFit"></image>
+					<view class="nodata-text">暂无内容</view>
+				</view>
+				<view v-else class="list-item" v-for="(item,index) in dataList" :key="index" @tap="goDetail(item)">
+					<image class="list-img" :src="imgurl+item.img_url" mode="aspectFit"></image>
+					<view class="list-text tline">{{item.pro_name}}</view>
+					<view class="subtit">{{item.slogan}}</view>
+				</view>
+			</scroll-view>
+		</view>
+		<!-- 登录弹出框 -->
+		<!-- <view v-if="isLoginShow" class="mask-box" @touchmove.stop.prevent="doNothing">
+			<view class="content-box">
+				<image class="pop-img" src="../../static/popImg.png" mode="aspectFit"></image>
+				<view class="title">您还未登录</view>
+				<view class="des">(请先登录/注册再进行此操作)</view>
+				<view class="login-btn" @tap="goLogin(1)">登录</view>
+				<view class="des" @tap="goLogin(2)">还未注册，我要注册</view>
+			</view>
+			<image class="close-btn" src="../../static/close.png" mode="aspectFit" @tap="closeLoginMask()"></image>
+		</view> -->
+		<!-- 微信授权弹出框 -->
+		<view v-if="isLoginShow" class="mask-box">
+			<view class="login-box">
+				<view class="tip">您还未登录，请先登录！</view>
+				<button open-type="getUserInfo" @getuserinfo="getUserInfo" class="login-btn">授权登录</button>
+			</view>
+			<image class="close-btn" src="https://shop.pangu.mobi/static/mobile/close.png" mode="aspectFit" @tap="closeLoginMask()"></image>
+		</view>
+		<!-- 入群弹窗 -->
+		<view v-if="rqpopup">
+			<view class="mask1" @tap="closeRqparty()"></view>
+			<view class="popup">
+				<view @tap="closeRqparty()" class="close-wrap wx">
+					<image class="close-btn" src="https://shop.pangu.mobi/static/mobile/gb.png" mode="aspectFit"></image>
+				</view>
+				<image class="pop-img-wx" src="https://shop.pangu.mobi/static/mobile/wxpopup-new.jpg" mode="widthFix"></image>
+				<cell class="cell-contact" style="width:300rpx;" @startmessage='startmessage()' @completemessage="completemessage()"
+				 plugid='53b9c5b553d64abd3d6552b5c5e3c1a3' styleType="2" buttonText="0" blockStyle="button" buttonStyle="primary" />
+				<!-- <view class="contact-btn">
+					<image src="https://shop.pangu.mobi/static/mobile/contact-btn.jpg" class="contact-btn-inner" mode="widthFix"></image>
+				</view> -->
+				<!-- <view class="wx-contact-btn" @tap="saveNewImg()"></view> -->
+			</view>
+		</view>
+		<!-- 加载提示 -->
+		<view class="jztip jzz" v-if="jztip">{{jz}}</view>
+		<view class="zhanwei"></view>
+		<foot-part @openLogin="openLogin"></foot-part>
+	</view>
 </template>
 
 <script>
