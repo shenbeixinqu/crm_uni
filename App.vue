@@ -5,7 +5,6 @@
 			// let nowRoute = window.location.hash;
 			let pages=getCurrentPages();
 			let currpage=null;
-			let a = 23;
 			if(pages.length) currpage = pages[pages.length - 1];
 			let nowRoute=currpage.route
 			// 不需要用户信息的页面

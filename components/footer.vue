@@ -5,14 +5,29 @@
 			<image class="img" v-if="nowFoot!=1" src="../static/home.png" mode="aspectFit"></image>
 			<view class="text">首页</view>
 		</view>
-		<view class="foot-item" @tap="goAddinfo()">
-			<image class="add-img" src="../static/add.png"></image>
+		<view :class="['foot-item',nowFoot==2?'now-foot':'']" @tap="goMine()">
+			<image class="img" v-if="nowFoot==2" src="../static/user1.png" mode="aspectFit"></image>
+			<image class="img" v-if="nowFoot!=2" src="../static/user.png" mode="aspectFit"></image>
+			<view class="text">线索</view>
+		</view>
+		
+		<!-- <view class="foot-item" @tap="goAddinfo()">
+			<image class="img" src="../static/add.png"></image>
 			<view class="text">添加线索</view>
 		</view>
+		<view class="foot-item" @tap="goAddinfo()">
+			<image class="img" src="../static/add.png"></image>
+			<view class="text">客户</view>
+		</view> -->
 		<view :class="['foot-item',nowFoot==3?'now-foot':'']" @tap="goMine()">
 			<image class="img" v-if="nowFoot==3" src="../static/user1.png" mode="aspectFit"></image>
 			<image class="img" v-if="nowFoot!=3" src="../static/user.png" mode="aspectFit"></image>
 			<view class="text">我的</view>
+		</view>
+		<view :class="['foot-item',nowFoot==4?'now-foot':'']" @tap="goMine()">
+			<image class="img" v-if="nowFoot==4" src="../static/user1.png" mode="aspectFit"></image>
+			<image class="img" v-if="nowFoot!=4" src="../static/user.png" mode="aspectFit"></image>
+			<view class="text">线索</view>
 		</view>
 	</view>
 </template>
@@ -105,5 +120,5 @@
 	.img{width: 45rpx;height: 46rpx;margin: 0 auto 5rpx;}
 	.add-img{width: 133rpx;height: 133rpx;margin: -85rpx auto 0;}
 	.text{font-size: 28rpx;color: #999999;}
-	.now-foot .text{color: #fe4d2a;}
+	.now-foot .text{color: #4873c1;}
 </style>
