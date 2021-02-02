@@ -6,7 +6,7 @@
 			// 	"navigationStyle":"custom"
 			// }
 			"style": {
-				"navigationBarTitleText":"盘古宝",
+				"navigationBarTitleText":"CMR",
 				"mp-weixin":{
 					/* 在使用的页面中声明 */
 					"usingComponents": {
@@ -137,8 +137,8 @@
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "盘古商城",
-		"navigationBarBackgroundColor": "#fb2711",
+		"navigationBarTitleText": "CMR",
+		"navigationBarBackgroundColor": "#4873c1",
 		"backgroundColor": "#ffffff"
 	}
 }
