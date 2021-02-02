@@ -1,0 +1,21 @@
+{
+    "appInfo": {},
+    "appid": "22613899",
+    "appkey": "",
+    "condition": {},
+    "host": "baiduboxapp",
+    "libVersion": "",
+    "projectname": "盘古商城",
+    "publish": {
+        "version": "1.0.4"
+    },
+    "setting": {
+        "urlCheck": false
+    },
+    "swan": {
+        "baiduboxapp": {
+            "extensionJsVersion": "1.18.3",
+            "swanJsVersion": "3.220.19"
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的信息",
+  "component": true,
+  "usingComponents": {
+    "pca-picker": "/components/pca-picker/pca-picker"
+  }
+}

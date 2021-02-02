@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "佣金明细",
+  "component": true,
+  "usingComponents": {
+    "foot-part": "/components/footer"
+  }
+}

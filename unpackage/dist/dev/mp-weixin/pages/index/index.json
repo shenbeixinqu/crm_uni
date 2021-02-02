@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "盘古宝",
+  "usingComponents": {
+    "cell": "plugin://contactPlugin/cell"
+  }
+}

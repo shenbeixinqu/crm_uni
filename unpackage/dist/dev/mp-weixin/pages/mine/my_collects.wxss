@@ -1,0 +1,13 @@
+
+.content-part.data-v-560bbb0e{position: absolute;width: 100%;height: calc(100% - 130rpx);overflow: auto;background-color: #fff;}
+.collect_list.data-v-560bbb0e{height: 100%;}
+.collect_item.data-v-560bbb0e{background-color: #fff;/* border-bottom: 2rpx solid #eeeeee; */}
+.pro-pic.data-v-560bbb0e{ width:215rpx; height:140rpx; margin-left:20rpx; border:2rpx solid #c5c5c6;}
+.pro-info.data-v-560bbb0e{ padding-left:41rpx;}
+.pro-tit.data-v-560bbb0e{ font-size: 31rpx; color:black;}
+.pro-icon.data-v-560bbb0e{ width:35rpx; height:35rpx; margin-left:16rpx;}
+.pro-tip.data-v-560bbb0e{ font-size: 23rpx; color:#666666; margin-top:18rpx;}
+.pro-time.data-v-560bbb0e{ font-size: 23rpx; color:#a0a0a0; margin-top:18rpx;}
+.share_icon.data-v-560bbb0e{ width:50rpx; height: 48rpx;}
+.line.data-v-560bbb0e{ width:100%; height: 2rpx; background: #eeeeee;}
+

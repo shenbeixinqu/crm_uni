@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/product/pro_list",
+    "pages/product/pro_detail",
+    "pages/clue/clue",
+    "pages/mine/my_index",
+    "pages/mine/my_info",
+    "pages/mine/my_success",
+    "pages/mine/my_withdrawal",
+    "pages/mine/my_apply_success",
+    "pages/mine/my_clues",
+    "pages/mine/my_incomes",
+    "pages/mine/my_collects",
+    "pages/mine/my_invite",
+    "pages/mine/my_info_new",
+    "pages/mine/my_news",
+    "pages/login/login_new",
+    "pages/mine/my_know",
+    "pages/product/pro_img",
+    "pages/mine/bd_gfkf",
+    "pages/mine/bd_rq"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "盘古商城",
+    "navigationBarBackgroundColor": "#fb2711",
+    "backgroundColor": "#ffffff"
+  },
+  "usingComponents": {
+    "foot-part": "/components/footer"
+  }
+}

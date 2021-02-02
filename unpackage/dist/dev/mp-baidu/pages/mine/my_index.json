@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": true,
+  "component": true,
+  "usingComponents": {
+    "foot-part": "/components/footer"
+  }
+}

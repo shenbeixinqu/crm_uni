@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "添加线索",
+  "component": true,
+  "usingComponents": {
+    "pca-picker": "/components/pca-picker/pca-picker"
+  }
+}

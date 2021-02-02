@@ -1,0 +1,1 @@
+<view><image src="https://shop.pangu.mobi/static/mobile/baidu-contact.png" mode="widthFix"></image><image class="savepic" src="../../static/baidu-savebtn.png" mode="widthFix" data-event-opts="{{[['tap',[['savePic']]]]}}" bindtap="__e"></image></view>

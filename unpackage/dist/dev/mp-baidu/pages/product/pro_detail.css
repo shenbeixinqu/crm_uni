@@ -1,0 +1,355 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 点击富文本图片变大弹出框 */
+.popup.data-v-bd05e408{width:100%; height:100%; position:fixed; top:0; left:0;}
+.popup .mask.data-v-bd05e408{width:100%; height:100%; position:absolute; top:0; left:0; z-index:0; background: black; opacity:0.5;}
+.popup image.data-v-bd05e408{width:100%; height:100%;display: block;position: absolute;left:0%;right:0%;transfrom:translate(-50%,-50%);z-index:2;}
+.top-part.data-v-bd05e408{width: 100%;height:500rpx;position: relative;}
+.banner-swiper.data-v-bd05e408,.swiper-img.data-v-bd05e408{width: 100%;height: 100%;}
+.goreturn.data-v-bd05e408{width:140rpx; height: 140rpx; position: fixed; top:20rpx;lefT:0;z-index:4;}
+.return-btn.data-v-bd05e408{width:24rpx;height: 48rpx;margin: 50rpx 0 0 30rpx;position: absolute;top: 0; z-index:4; left:0;}
+.type-part.data-v-bd05e408{width: 100%;height: 100rpx;padding: 0 30rpx;}
+.left-part.data-v-bd05e408{float: left;}
+.left-text.data-v-bd05e408{font-size: 32rpx;line-height: 100rpx;float: left;width: 350rpx;}
+.left-part ._span.data-v-bd05e408{width: 8rpx;height: 40rpx;-webkit-border-radius: 5rpx;border-radius: 5rpx;background-color: #f1b81f;float: left;margin: 30rpx 15rpx 0 0;}
+.right-part.data-v-bd05e408{font-size: 32rpx;color: #666666;line-height: 100rpx;float: right;}
+.content-part.data-v-bd05e408{padding-top: 20rpx;}
+.bottom-part.data-v-bd05e408{position: fixed;bottom: 0;width: 100%;height: 135rpx;border-top: 1px solid #cbcbcb;background-color: #fff;padding: 20rpx 30rpx 0;}
+.bottom-item.data-v-bd05e408{display: inline-block;width: 110rpx; background: white;}
+.item-img.data-v-bd05e408{width: 48rpx;height: 46rpx;margin: 10rpx auto 5rpx;}
+.item-img.collect.data-v-bd05e408{ margin-top:-10rpx;}
+.item-text.data-v-bd05e408{font-size: 28rpx;color: #666666;text-align: center;}
+.add-btn.data-v-bd05e408{width: 438rpx;height: 90rpx;text-align: center;background-color: #f52f0e;color: #fff;font-size: 34rpx;line-height: 90rpx;-webkit-border-radius: 15rpx;border-radius: 15rpx;float: right;}
+.info-part.data-v-bd05e408{overflow: hidden;}
+.share-img.data-v-bd05e408{width: 325rpx;height: 172rpx;position: absolute;right: 0;}
+.share-text.data-v-bd05e408{font-size: 36rpx;width: 240rpx;margin: 180rpx auto 0;line-height: 60rpx;color: #fff;text-align: center;}
+.know-btn.data-v-bd05e408{font-size: 36rpx;width: 250rpx;height: 90rpx;margin: 480rpx auto 0;line-height: 90rpx;color: #fff;text-align: center;border: 1px dashed #fff;-webkit-border-radius: 10rpx;border-radius: 10rpx;}
+.content-box.data-v-bd05e408{width: 575rpx;height: 580rpx;background-color: #fff;-webkit-border-radius: 10rpx;border-radius: 10rpx;margin: 350rpx auto 30rpx;position: relative;}
+.content-box .pop-img.data-v-bd05e408{width: 282rpx;height: 282rpx;margin: -141rpx auto 0;position: absolute;left: 0;right: 0;}
+.content-box .title.data-v-bd05e408{font-size: 42rpx;text-align: center;padding-top: 190rpx;}
+.content-box .des.data-v-bd05e408{font-size: 30rpx;color: #666666;text-align: center;padding-top: 35rpx;}
+.content-box .login-btn.data-v-bd05e408{width: 490rpx;height: 90rpx;background-color: #f62f0e;color: #fff;font-size: 32rpx;text-align: center;margin: 60rpx auto 0;line-height: 90rpx;-webkit-border-radius: 45rpx;border-radius: 45rpx;}
+.close-btn.data-v-bd05e408{width: 69rpx;height: 69rpx;margin: 0 auto;}
+/* 微信授权弹出框 */
+.login-box.data-v-bd05e408{ width:60%; padding:50rpx 0; background: white; -webkit-border-radius: 10rpx; border-radius: 10rpx; position: relative; left:20%; top:35%;}
+.login-box .tip.data-v-bd05e408{ color: black; font-size:30rpx; text-align: center;}
+.login-box .login-btn.data-v-bd05e408{ width: 90%; height: 90rpx; margin:auto; background-color: #f62f0e; color: #fff; font-size: 32rpx; text-align: center; line-height: 90rpx; -webkit-border-radius: 45rpx; border-radius: 45rpx; margin-top: 50rpx;}
+.close-btn.data-v-bd05e408{width: 69rpx;height: 69rpx;margin: 0 auto; margin-top:500rpx;}
+button.data-v-bd05e408{ padding:0; background-color: none; overflow: inherit;}
+button.data-v-bd05e408::after {border: none;}
+

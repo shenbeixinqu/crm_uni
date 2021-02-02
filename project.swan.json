@@ -1,0 +1,14 @@
+{
+    "host": "baiduboxapp",
+    "projectname": "program",
+    "setting": {
+        "urlCheck": true
+    },
+    "swan": {
+        "baiduboxapp": {
+            "swanJsVersion": "3.180.16",
+            "extensionJsVersion": "1.13.1"
+        }
+    },
+    "appid": "22613899"
+}

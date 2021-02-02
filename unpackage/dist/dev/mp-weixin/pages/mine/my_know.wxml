@@ -1,0 +1,1 @@
+<view><image src="https://shop.pangu.mobi/static/mobile/complete.jpg" mode="widthFix"></image><view data-event-opts="{{[['tap',[['back']]]]}}" class="ok" bindtap="__e">知道了</view></view>

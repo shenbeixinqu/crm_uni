@@ -1,0 +1,4 @@
+
+.ok{ width:80%; margin:auto; background: blue; color:white; text-align:center; line-height: 80rpx; -webkit-border-radius: 50rpx; border-radius: 50rpx; height:80rpx; margin-bottom:20rpx;}
+.savepic{ width:80%; margin-top:20rpx; display: block; margin:auto;}
+

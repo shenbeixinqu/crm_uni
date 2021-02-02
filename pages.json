@@ -1,0 +1,144 @@
+{
+	"pages": [
+		{
+			"path": "pages/index/index",//首页
+			// "style": {
+			// 	"navigationStyle":"custom"
+			// }
+			"style": {
+				"navigationBarTitleText":"盘古宝",
+				"mp-weixin":{
+					/* 在使用的页面中声明 */
+					"usingComponents": {
+						"cell": "plugin://contactPlugin/cell"
+					}
+				}
+			}
+		},{
+			"path": "pages/login/login",//登录
+			"style": {
+				"navigationStyle":"custom"
+			}
+		},{
+			"path": "pages/product/pro_list",//产品分类
+			"style": {
+				"navigationBarTitleText":"产品分类",
+				"enablePullDownRefresh": false
+			}
+		},{
+			"path": "pages/product/pro_detail",//产品详情
+			"style": {
+				"navigationStyle":"custom"
+				// "navigationBarTitleText":"产品详情"
+			}
+		},{
+			"path": "pages/clue/clue",//添加线索
+			"style": {
+				"navigationBarTitleText":"添加线索"
+			}
+		},{
+			"path": "pages/mine/my_index",//个人中心
+			"style": {
+				"navigationStyle":"custom",
+				"enablePullDownRefresh": true,
+				"mp-weixin":{
+					/* 在使用的页面中声明 */
+					"usingComponents": {
+						"cell": "plugin://contactPlugin/cell"
+					}
+				}
+			}
+		},{
+			"path": "pages/mine/my_info",//个人中心-修改绑定号码、修改密码
+			"style": {
+				"navigationStyle":"custom"
+			}
+		},{
+			"path": "pages/mine/my_success",//个人中心-修改成功、失败
+			"style": {
+				"navigationBarTitleText":"修改成功"
+			}
+		},{
+			"path": "pages/mine/my_withdrawal",//个人中心-提现
+			"style": {
+				"navigationBarTitleText":"提现"
+			}
+		},{
+			"path": "pages/mine/my_apply_success",//个人中心-提现申请成功
+			"style": {
+				"navigationBarTitleText":"申请成功"
+			}
+		},{
+			"path": "pages/mine/my_clues",//个人中心-线索明细
+			"style": {
+				"navigationBarTitleText":"线索明细",
+				"enablePullDownRefresh": true
+			}
+		},{
+			"path": "pages/mine/my_incomes",//个人中心-收支明细
+			"style": {
+				"navigationBarTitleText":"佣金明细"
+			}
+		},{
+			"path": "pages/mine/my_collects",//个人中心-我的收藏
+			"style": {
+				"navigationBarTitleText":"我的收藏"
+			}
+		},{
+            "path" : "pages/mine/my_invite",//个人中心-邀请注册
+            "style" : {
+				"navigationBarTitleText":"邀请注册"
+			}
+        },{
+            "path" : "pages/mine/my_info_new",//个人中心-我的资料
+            "style" : {
+				"navigationBarTitleText":"我的信息"
+			}
+        },{
+            "path" : "pages/mine/my_news",//个人中心-我的消息
+   //          "style" : {
+			// 	// "navigationBarTitleText":"我的消息"
+				
+			// }
+			"style": {
+				"navigationStyle":"custom",
+				"enablePullDownRefresh": true
+			}
+        },{
+            "path" : "pages/login/login_new",//授权登录
+            "style": {
+				"navigationBarTitleText":"盘古宝"
+            }
+        },{
+            "path" : "pages/mine/my_know",//邀请已发送
+            "style": {
+				"navigationBarTitleText":"邀请已发送"
+            }
+        },
+		{
+		    "path" : "pages/product/pro_img",//点击banner跳转页面
+		    "style": {
+				"navigationBarTitleText":"平台赚钱秘籍"
+		    }
+		},
+		{
+		    "path" : "pages/mine/bd_gfkf",//官方客服
+		    "style": {
+		    	// "navigationBarTitleText":"官方客服"
+				"navigationStyle":"custom"
+		    }
+		},
+		{
+		    "path" : "pages/mine/bd_rq",//官方合伙人群
+		    "style": {
+				"navigationBarTitleText":"官方合伙人群"
+		    }
+		}
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "盘古商城",
+		"navigationBarBackgroundColor": "#fb2711",
+		"backgroundColor": "#ffffff"
+	}
+}

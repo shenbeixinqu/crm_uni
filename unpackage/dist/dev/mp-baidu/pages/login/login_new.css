@@ -1,0 +1,21 @@
+
+.d-left{display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-pack:left;-webkit-justify-content:left;justify-content:left;-webkit-box-align:center;-webkit-align-items:center;align-items:center;}
+.d-center{display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-pack: center;-webkit-justify-content: center;justify-content: center;-webkit-box-align: center;-webkit-align-items: center;align-items: center;}
+.d-between{display: -webkit-box;display: -webkit-flex;display: flex; -webkit-box-pack: justify; -webkit-justify-content: space-between; justify-content: space-between;-webkit-box-align:center;-webkit-align-items:center;align-items:center;}
+.top-part{width: 100%;height: 327rpx; background: url(/static/loginBgtop.jpg) no-repeat;background-size: cover;}
+.head-part{height: 110rpx;position: relative;}
+.head-title{font-size: 36rpx;color: #fff;text-align: center;padding-top: 60rpx;}
+.box-part{ position: relative;}
+.bg{ position: absolute; top:0; width:100%; height: 840rpx;}
+.login-box{ width:672rpx; height: 561rpx; background: url(/static/login_newbg.png) no-repeat;background-size: cover; margin:auto; position: absolute; top:-250rpx; left:5%;}
+.login-p1{ color: #333333; font-size: 35rpx; text-align: center; margin-top:40%;}
+.login-p2{ color: #333333; font-size: 28rpx; text-align: center; margin-top:24rpx;}
+.login-btn{ width:471rpx; height: 91rpx; margin:auto; overflow: none; padding:0;}
+button{ margin-top:20rpx; border:none; width:471rpx; padding:0; background: white;}
+button::after {
+   border: none;
+}
+.bd-btn{ width:471rpx; height: 85rpx; margin:auto; overflow: none; padding:0; background: #fa1c12; -webkit-border-radius:20rpx; border-radius:20rpx;}
+.baidulogo{ width:42rpx; height:35rpx; margin-right:10rpx;}
+.baidutext{ color:white; font-size: 28rpx; margin-top:5rpx;}
+
