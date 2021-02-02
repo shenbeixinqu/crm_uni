@@ -5,29 +5,22 @@
 			<image class="img" v-if="nowFoot!=1" src="../static/home.png" mode="aspectFit"></image>
 			<view class="text">首页</view>
 		</view>
+	
+		<view :class="['foot-item',nowFoot==4?'now-foot':'']" @tap="goMine()">
+			<image class="img" v-if="nowFoot==4" src="../static/xian1.png" mode="aspectFit"></image>
+			<image class="img" v-if="nowFoot!=4" src="../static/xian.png" mode="aspectFit"></image>
+			<view class="text">线索</view>
+		</view>
+		<view :class="['foot-item',nowFoot==3?'now-foot':'']" @tap="goMine()">
+			<image class="img" v-if="nowFoot==3" src="../static/ke1.png" mode="aspectFit"></image>
+			<image class="img" v-if="nowFoot!=3" src="../static/ke.png" mode="aspectFit"></image>
+			<view class="text">客户</view>
+		</view>
+		
 		<view :class="['foot-item',nowFoot==2?'now-foot':'']" @tap="goMine()">
 			<image class="img" v-if="nowFoot==2" src="../static/user1.png" mode="aspectFit"></image>
 			<image class="img" v-if="nowFoot!=2" src="../static/user.png" mode="aspectFit"></image>
-			<view class="text">线索</view>
-		</view>
-		
-		<!-- <view class="foot-item" @tap="goAddinfo()">
-			<image class="img" src="../static/add.png"></image>
-			<view class="text">添加线索</view>
-		</view>
-		<view class="foot-item" @tap="goAddinfo()">
-			<image class="img" src="../static/add.png"></image>
-			<view class="text">客户</view>
-		</view> -->
-		<view :class="['foot-item',nowFoot==3?'now-foot':'']" @tap="goMine()">
-			<image class="img" v-if="nowFoot==3" src="../static/user1.png" mode="aspectFit"></image>
-			<image class="img" v-if="nowFoot!=3" src="../static/user.png" mode="aspectFit"></image>
 			<view class="text">我的</view>
-		</view>
-		<view :class="['foot-item',nowFoot==4?'now-foot':'']" @tap="goMine()">
-			<image class="img" v-if="nowFoot==4" src="../static/user1.png" mode="aspectFit"></image>
-			<image class="img" v-if="nowFoot!=4" src="../static/user.png" mode="aspectFit"></image>
-			<view class="text">线索</view>
 		</view>
 	</view>
 </template>
