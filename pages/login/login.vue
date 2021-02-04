@@ -48,13 +48,14 @@ export default {
 				},
 				success: (userInfo) => {
 					this.userInfo = userInfo.data
-					var token = "asdqwerqweasdafazxasafqwqrasdafgasdafa";
+					// var token = "asdqwerqweasdafazxasafqwqrasdafgasdafa";
+					var token = userInfo.data.token
 					// uni.navigateTo({
 					// 	// url:'/pages/index/index'
 					// 	url:'/pages/mine/my_index'
 					// });
 					console.log("token1",token)
-					if (this.loading){
+					if (token){
 						this.token = token;
 						console.log("token",this.token)
 						this.$store
@@ -77,7 +78,7 @@ export default {
 		},
 	},
 	onLoad(option) {
-			option.code = "ajsganjgkangaaskgagain"
+			// option.code = "ajsganjgkangaaskgagain"
 			this.option = option
 			if (option.code == null) {
 				this.getpower()

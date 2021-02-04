@@ -6,7 +6,7 @@
 			<view class="text">首页</view>
 		</view>
 	
-		<view :class="['foot-item',nowFoot==4?'now-foot':'']" @tap="goMine()">
+		<view :class="['foot-item',nowFoot==4?'now-foot':'']" @tap="goClue()">
 			<image class="img" v-if="nowFoot==4" src="../static/xian1.png" mode="aspectFit"></image>
 			<image class="img" v-if="nowFoot!=4" src="../static/xian.png" mode="aspectFit"></image>
 			<view class="text">线索</view>
@@ -84,6 +84,15 @@
 					uni.navigateTo({
 						url: '../login/login_new?path=1'
 					})
+				}
+			},
+			//线索
+			goClue() {
+				if(this.nowFoot!=4) {
+					uni.reLaunch({
+						url: '../searchclue/searchclue'
+					});
+					this.nowFoot = 4
 				}
 			},
 			// 我的
