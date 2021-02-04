@@ -33,7 +33,7 @@
 				// "navigationBarTitleText":"产品详情"
 			}
 		},{
-			"path": "pages/clue/clue",//添加线索
+			"path": "pages/searchclue/searchclue",//添加线索
 			"style": {
 				"navigationBarTitleText":"添加线索"
 			}
@@ -137,6 +137,7 @@
 		}
     ],
 	"globalStyle": {
+		"navigationStyle":"custom",
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "CMR",
 		"navigationBarBackgroundColor": "#4873c1",
