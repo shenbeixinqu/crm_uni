@@ -1,11 +1,18 @@
 {
 	"pages": [
 		{
-			"path": "pages/login/login",//登录
+			"path": "pages/searchclue/searchclue",//登录
 			"style": {
-				"navigationStyle":"custom"
+				"navigationBarTitleText":"我的线索",
+				"enablePullDownRefresh": false
 			}
 		},
+		// {
+		// 	"path": "pages/login/login",//登录
+		// 	"style": {
+		// 		"navigationStyle":"custom"
+		// 	}
+		// },
 		{
 			"path": "pages/index/index",//首页
 			// "style": {
