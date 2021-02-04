@@ -2,9 +2,9 @@
 	<view class="content">
 		<view class="topview">
 			<button class="search-btn">1</button>
-			<input class="se-input" name="nickname" placeholder="请输入客户名称" v-model="kword"/><button type="primary"
-              size="small" class="shai-btn" @click="getList('search')">筛选</button></button>  <button type="primary"
-              size="small" class="shai-btn" @click="add()">新增</button></view>
+			<input class="se-input" name="nickname" placeholder="请输入客户名称" v-model="kword" /><button type="primary" size="small"
+			 class="shai-btn" @click="getList('search')">筛选</button></button> <button type="primary" size="small" class="shai-btn"
+			 @click="add()">新增</button></view>
 		<!-- 数据列表 -->
 		<scroll-view scroll-y @scrolltolower="getNextData" class="right-part">
 			<view v-if="showxs" class="nodata-part" style="padding-top:100upx;">
@@ -41,6 +41,7 @@
 	export default {
 		data() {
 			return {
+				kword: '',
 				isAll: false,
 				nowPage: 1,
 				list: [],
@@ -50,29 +51,60 @@
 			}
 		},
 		onLoad(options) {
-			this.getProData();
+			this.getList();
 		},
 		methods: {
-			async getProData() {
-				let that = this;
-				uni.showLoading();
-				let res = await that.$api.commonMethod('/api/customer/clue/my', 'GET');
-				console.log(res);
-				if (res.statusCode == 200) {
-					this.list = res.data.data.data;
-					console.log('aaa', this.list)
-					if (this.list.length == 0) {
-						this.showxs = true;
-						uni.hideLoading();
-					} else {
-						this.showxs = false;
-					}
-					setTimeout(function() {
-						uni.hideLoading();
-					}, 1000)
+			// async getProData() {
+			// 	let that = this;
+			// 	uni.showLoading();
+			// 	let res = await that.$api.commonMethod('/api/customer/clue/my', 'GET');
+			// 	console.log(res);
+			// 	if (res.statusCode == 200) {
+			// 		this.list = res.data.data.data;
+			// 		console.log('aaa', this.list)
+			// 		if (this.list.length == 0) {
+			// 			this.showxs = true;
+			// 			uni.hideLoading();
+			// 		} else {
+			// 			this.showxs = false;
+			// 		}
+			// 		setTimeout(function() {
+			// 			uni.hideLoading();
+			// 		}, 1000)
 
-				}
+			// 	}
+			// },
+			getList() {
+				console.log('ddd',this.$burl)
+				uni.request({
+					url: this.$burl + '/api/customer/clue/my',
+					data: {
+						// user_id: uni.getStorageSync('user_id'),
+						// type: '1'
+					},
+					success: (res) => {
+						console.log(res);
+						uni.showLoading();
+						if (res.statusCode == 200) {
+							this.list = res.data.data;
+							if (this.list.length == 0) {
+								this.showxs = true;
+								uni.hideLoading();
+							} else {
+								this.showxs = false;
+							}
+							setTimeout(function() {
+								uni.hideLoading();
+							}, 1000)
+						}
+					},
+					fail: (err) => {
+						//console.log(err)
+					}
+				})
 			},
+
+
 			changeTab(v) {
 				this.selectTab = v.id;
 				this.dataList = [];
@@ -225,11 +257,41 @@
 		padding-top: 1upx;
 		padding-bottom: 1upx;
 	}
-	.se-input{ width:65%; height:60rpx; line-height: 60rpx; font-size: 22upx; text-indent: 1rem; 	border: 1px #e4e4e4 solid; border-radius:10upx;}
-	.search-btn{height: 60rpx;width: 60rpx; background: #39B54A; position: absolute;}
-	.shai-btn{ width: 15%;height:60rpx; line-height: 60rpx;font-size: 22upx;  color: #fff;}
-	.topview{ width:96%;  margin-top:25rpx; display: flex;justify-content: flex-start;align-items: center; }
-	
+
+	.se-input {
+		width: 65%;
+		height: 60rpx;
+		line-height: 60rpx;
+		font-size: 22upx;
+		text-indent: 1rem;
+		border: 1px #e4e4e4 solid;
+		border-radius: 10upx;
+	}
+
+	.search-btn {
+		height: 60rpx;
+		width: 60rpx;
+		background: url(../../static/ss.png);
+		background-size: contain;
+		position: absolute;
+	}
+
+	.shai-btn {
+		width: 15%;
+		height: 60rpx;
+		line-height: 60rpx;
+		font-size: 22upx;
+		color: #fff;
+	}
+
+	.topview {
+		width: 96%;
+		margin-top: 25rpx;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
 
 	.list-dqk {
 		flex-direction: row;
