@@ -12,7 +12,7 @@
 			// 	"navigationStyle":"custom"
 			// }
 			"style": {
-				"navigationBarTitleText":"CMR",
+				"navigationBarTitleText":"CRM",
 				"mp-weixin":{
 					/* 在使用的页面中声明 */
 					"usingComponents": {

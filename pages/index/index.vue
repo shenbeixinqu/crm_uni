@@ -1,11 +1,54 @@
 <template>
-<view>
-	
-	<foot-part @openLogin="openLogin"></foot-part>
-		
-</view>
-	
-		
+	<view class="content">
+		<view class="indexconent">线索&客户</view>
+		<view class="indeximg">
+			<view class="index_n_img">
+				<image class="index_image" src="../../static/addmx.png" mode="aspectFit"></image>
+				<h4>新增线索</h4>
+			</view>
+			<view class="index_n_img">
+				<image class="index_image" src="../../static/ssxx.png" mode="aspectFit"></image>
+				<h4>搜索线索</h4>
+			</view>
+			<view class="index_n_img">
+				<image class="index_image" src="../../static/woxs.png" mode="aspectFit"></image>
+				<h4>新增线索</h4>
+			</view>
+			<view class="index_n_img">
+				<image class="index_image" src="../../static/wdkh.png" mode="aspectFit"></image>
+				<h4>我的客户</h4>
+			</view>
+
+		</view>
+		<view class="indexconent">出访</view>
+		<view class="indeximg">
+			<view class="index_n_img">
+				<image class="index_image" src="../../static/cfsq.png" mode="aspectFit"></image>
+				<h4>出访申请</h4>
+			</view>
+			<view class="index_n_img">
+				<image class="index_image" src="../../static/wdcf.png" mode="aspectFit"></image>
+				<h4>我的出访</h4>
+			</view>
+
+		</view>
+		<view class="indexconent">审核</view>
+		<view class="indeximg">
+			<view class="index_n_img">
+				<image class="index_image" src="../../static/gjsh.png" mode="aspectFit"></image>
+				<h4>跟进线索审核</h4>
+			</view>
+			<view class="index_n_img">
+				<image class="index_image" src="../../static/wdxs.png" mode="aspectFit"></image>
+				<h4>线索延期审核</h4>
+			</view>
+
+		</view>
+		<foot-part @openLogin="openLogin"></foot-part>
+
+	</view>
+
+
 </template>
 
 <script>
@@ -375,520 +418,54 @@
 </script>
 
 <style scoped>
-	.cell-contact {
-		width: 70%;
-		height: 28px;
-		border-radius: 24px;
-		text-align: center;
-		line-height: 56px;
-		display: inline-block;
-		margin: auto;
-		display: block;
-		position: absolute;
-		bottom: 36rpx;
-		right: 34rpx;
-		opacity: 0;
-		z-index: 11111;
-	}
-
-	.contact-btn {
-		position: absolute;
-		bottom: 30rpx;
-		right: 20rpx;
-		background: white;
-		border-radius: 50rpx;
-	}
-
-	.contact-btn-inner {
-		padding: 15rpx 50rpx;
-		width: 195rpx;
-	}
-
-	.cell--button {
-		width: 300rpx;
-	}
-
-	.banner-part {
+	.content {
 		width: 100%;
-		height: 402rpx;
-		position: relative;
-		top: -3rpx;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 
-	.banner-swiper,
-	.swiper-img {
+	.indexconent {
 		width: 100%;
-		height: 100%;
-	}
-
-	.rule-btn {
-		position: absolute;
-		font-size: 26rpx;
-		width: 90rpx;
-		height: 45rpx;
-		right: 0;
-		top: 70rpx;
-		background-color: #fff;
-		border-top-left-radius: 30rpx;
-		border-bottom-left-radius: 30rpx;
-		line-height: 45rpx;
-		padding-left: 25rpx;
-	}
-
-	.menu-part {
-		height: 220rpx;
-		box-shadow: 0 0 10rpx 1rpx #e7e7e7;
-		border-radius: 10rpx;
-		margin-top: -30rpx;
-		position: relative;
-		z-index: 9;
-		background-color: #fff;
+		height: 60rpx;
+		line-height: 60rpx;
+		background: #f2f2f2;
+		text-align: left;
+		font-size: 30rpx;
+		text-indent: 10rpx;
+		color: #666666;
 		display: flex;
 	}
 
-	/* .menu-item{ width:33.3%; margin-left:5%; float:left;} */
-	.menu-item {
-		width: 30.8%;
-		margin-left: 2%;
-		float: left;
-	}
-
-	.menu-item:first-child {
-		margin-left: 0;
-	}
-
-	.menu-img {
-		width: 97rpx;
-		height: 79rpx;
-		margin: 0 auto;
-	}
-
-	/* .menu-text{ font-size: 30rpx; text-align: center; padding-top: 20rpx; overflow: hidden;white-space: nowrap; text-overflow: ellipsis;} */
-	.menu-text {
-		font-size: 30rpx;
-		text-align: center;
-		padding-top: 20rpx;
-		white-space: nowrap;
-		width: 100%;
-		overflow: hidden;
-	}
-
-	.ggw-img {
-		height: 184rpx;
-		width: 723rpx;
-		margin: 15rpx auto 0;
-		position: relative;
-		z-index: 111;
-	}
-
-	.new-part {
-		height: 80rpx;
-	}
-
-	.new-img {
-		width: 63rpx;
-		height: 32rpx;
-		float: left;
-		margin-top: 25rpx;
-		margin-right: 20rpx;
-	}
-
-	.new-swiper {
-		height: 80rpx;
-		width: calc(100% - 85rpx);
-		float: left;
-	}
-
-	.new-text {
-		font-size: 28rpx;
-		color: #5d5d5d;
-		line-height: 85rpx;
-	}
-
-	.new-text span {
-		font-size: 22rpx;
-		color: #a5abae;
-		margin-left: 22rpx;
-		position: relative;
-		top: -3rpx;
-	}
-
-	.tab-part {
-		padding-top: 35rpx;
-		height: 85rpx;
-		padding: 20rpx 30rpx 0;
-	}
-
-	/* .all-item{font-size: 32rpx;width: 160rpx;height: 50rpx;display: inline-block;position: relative; top:4rpx;color: #fe4d2a;font-weight: bold;vertical-align: top;} */
-	.all-item {
-		font-size: 32rpx;
-		display: inline-block;
-		position: relative;
-		top: 4rpx;
-		color: #fe4d2a;
-		font-weight: bold;
-		vertical-align: top;
-	}
-
-	.all-item.all {
-		margin-left: 10rpx;
-	}
-
-	.tab-scroll-part {
-		display: inline-block;
-		width: calc(100% - 100rpx);
-		height: 60rpx;
-		overflow-x: auto;
-		overflow-y: hidden;
-		white-space: nowrap;
-		margin-left: 8rpx;
-	}
-
-	.scroll-item {
-		position: relative;
-		display: inline-block;
-		margin: 0 15rpx;
-	}
-
-	.tab-item {
-		font-size: 32rpx;
-		height: 40rpx;
-		text-align: center;
-		position: relative;
-		z-index: 9;
-	}
-
-	.img-item {
-		position: absolute;
-		top: 50rpx;
-		z-index: 1;
-		width: 80%;
-		display: none;
-		left: 10%;
-	}
-
-	/* .tabbg-img1{width: 120rpx;height: 18rpx;float: right;} */
-	.tabbg-img1 {
-		width: 103rpx;
-		height: 8rpx;
-		float: right;
-	}
-
-	.fixdItem {
-		position: -webkit-sticky;
-		position: sticky;
-		top: var(--window-top);
-		z-index: 99;
-		width: 100%;
-		height: 50px;
-		background: #ffffff;
-		;
-	}
-
-	.tabbg-img2 {
-		width: 100%;
-		height: 18rpx;
-		margin-top: 30rpx;
-	}
-
-	/* .tabbg-img1.tj{ float: left; top:16rpx; left:-43rpx;} */
-	/* .tabbg-img1.tj{ float: left; top:72rpx; left:-33rpx;} */
-	.tabbg-img2.tj {
-		width: 9%;
+	.indeximg {
 		margin-top: 50rpx;
+		margin-bottom: 50rpx;
+		width: 90%;
+		display: flex;
+		justify-content: left;
 	}
 
-	.tab-active {
-		display: block;
+	.index_n_img {
+		width: 24%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 
-	.list-part {
-		min-height: 30vh;
+	.index_image {
+		width: 60rpx;
+		height: 60rpx;
+		display: flex;
 	}
 
-	.list-item {
-		display: inline-block;
-		margin-top: 25rpx;
-		width: 322rpx;
-		overflow: hidden;
-	}
-
-	.list-item:nth-child(2n) {
-		margin-left: 30rpx;
-	}
-
-	.list-img {
-		width: 322rpx;
-		height: 240rpx;
-		border-radius: 10rpx;
-	}
-
-	.list-text {
-		font-size: 30rpx;
-		text-align: left;
-		padding-top: 10rpx;
-	}
-
-	.subtit {
-		font-size: 24rpx;
-		color: #6a6a6a;
+	.index_n_img h4 {
+		width: 100%;
+		display: flex;
 		margin-top: 10rpx;
-		width: 322rpx;
-		overflow: hidden;
-		white-space: nowrap;
-	}
-
-	.content-box {
-		width: 575rpx;
-		height: 580rpx;
-		background-color: #fff;
-		border-radius: 10rpx;
-		margin: 350rpx auto 30rpx;
-		position: relative;
-	}
-
-	.content-box .pop-img {
-		width: 282rpx;
-		height: 282rpx;
-		margin: -141rpx auto 0;
-		position: absolute;
-		left: 0;
-		right: 0;
-	}
-
-	.content-box .title {
-		font-size: 42rpx;
-		text-align: center;
-		padding-top: 190rpx;
-	}
-
-	.content-box .des {
-		font-size: 30rpx;
-		color: #666666;
-		text-align: center;
-		padding-top: 35rpx;
-	}
-
-	.content-box .login-btn {
-		width: 490rpx;
-		height: 90rpx;
-		background-color: #f62f0e;
-		color: #fff;
-		font-size: 32rpx;
-		text-align: center;
-		margin: 60rpx auto 0;
-		line-height: 90rpx;
-		border-radius: 45rpx;
-	}
-
-	.close-btn {
-		width: 69rpx;
-		height: 69rpx;
-		margin: 0 auto;
-		margin-top: 500rpx;
-	}
-
-	/* 微信授权弹出框 */
-	.login-box {
-		width: 60%;
-		padding: 50rpx 0;
-		background: white;
-		border-radius: 10rpx;
-		position: relative;
-		left: 20%;
-		top: 35%;
-	}
-
-	.login-box .tip {
-		color: black;
-		font-size: 30rpx;
-		text-align: center;
-	}
-
-	.login-box .login-btn {
-		width: 90%;
-		height: 90rpx;
-		margin: auto;
-		background-color: #f62f0e;
-		color: #fff;
-		font-size: 32rpx;
-		text-align: center;
-		line-height: 90rpx;
-		border-radius: 45rpx;
-		margin-top: 50rpx;
-	}
-
-	.lately {
-		color: black;
-		font-size: 28rpx;
-		position: absolute;
-		top: 15rpx;
-		left: 30rpx;
-	}
-
-	.uni-margin-wrap {
-		width: 690rpx;
-		margin: 0 30rpx;
-	}
-
-	.swiper {
-		height: 150rpx;
-		width: 90%;
-		position: absolute;
-		top: 60rpx;
-		left: 5%;
-	}
-
-	.swiper-item {
-		display: block;
-		height: 300rpx;
-		line-height: 300rpx;
-		text-align: center;
-	}
-
-	.lefticon {
-		width: 9px;
-		height: 9px;
-		border-top: 1px solid black;
-		border-right: 1px solid black;
-		transform: rotate(225deg);
-		position: absolute;
-		top: 50rpx;
-		left: 50rpx;
-	}
-
-	.righticon {
-		width: 9px;
-		height: 9px;
-		border-top: 1px solid black;
-		border-right: 1px solid black;
-		transform: rotate(45deg);
-		position: absolute;
-		top: 50rpx;
-		right: 50rpx;
-	}
-
-	/* .all-item.recommended{ width:70rpx;} */
-	.swiper-inner {
-		overflow: hidden;
-		width: 90%;
-		margin: auto;
-	}
-
-	.tab-active-tj {
-		display: block;
-	}
-
-	.leftWrap {
-		width: 80rpx;
-		height: 150rpx;
-		position: absolute;
-		top: 50rpx;
-		left: -30rpx;
-	}
-
-	.rightWrap {
-		width: 80rpx;
-		height: 150rpx;
-		position: absolute;
-		top: 50rpx;
-		right: -30rpx;
-	}
-
-	.jztip {
-		margin: 20rpx 0;
-		text-align: center;
-		color: #666666;
-	}
-
-	.mask {
-		width: 100%;
-		height: 100%;
-		background: rgba(0, 0, 0, .7);
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 1111;
-	}
-
-	.popup {
-		width: 80%;
-		position: fixed;
-		left: 10%;
-		top: 14%;
-		z-index: 111111;
-	}
-
-	.close-btn1 {
-		width: 20rpx;
-		height: 20rpx;
-		position: absolute;
-		top: 20rpx;
-		right: 20rpx;
-		z-index: 1;
-	}
-
-	.rqimg {
-		width: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-	}
-
-	.button-save {
-		width: 80%;
-		height: 100rpx;
-		background: red;
-		color: white;
-		position: fixed;
-		bottom: 5%;
-		right: 10%;
-		z-index: 1;
-		text-align: center;
-		line-height: 100rpx;
-	}
-
-	.mask1 {
-		width: 100%;
-		height: 100%;
-		background: rgba(0, 0, 0, .7);
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 1111;
-	}
-
-	.pop-img-wx {
-		width: 100%;
-	}
-
-	.wx-contact-btn {
-		position: absolute;
-		bottom: 58rpx;
-		right: 50rpx;
-		width: 290rpx;
-		height: 60rpx;
-	}
-
-	.close-wrap {
-		width: 70rpx;
-		height: 70rpx;
-		position: absolute;
-		top: -108rpx;
-		right: 14rpx;
-	}
-
-	.close-wrap.wx {
-		top: 1rpx;
-		right: 0;
-		z-index: 1;
-	}
-
-	.close-btn {
-		width: 25rpx;
-		height: 25rpx;
-		padding-top: 21rpx;
-		display: block;
-		margin: auto;
+		font-size: 26rpx;
+		font-weight: normal;
+		justify-content: center;
 	}
 </style>
