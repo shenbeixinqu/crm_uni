@@ -1,7 +1,13 @@
 {
 	"pages": [
 		{
-			"path": "pages/searchclue/searchclue",//首页
+			"path": "pages/login/login",//登录
+			"style": {
+				"navigationStyle":"custom"
+			}
+		},
+		{
+			"path": "pages/index/index",//首页
 			// "style": {
 			// 	"navigationStyle":"custom"
 			// }
@@ -13,11 +19,6 @@
 						"cell": "plugin://contactPlugin/cell"
 					}
 				}
-			}
-		},{
-			"path": "pages/login/login",//登录
-			"style": {
-				"navigationStyle":"custom"
 			}
 		},{
 			"path": "pages/product/pro_list",//产品分类

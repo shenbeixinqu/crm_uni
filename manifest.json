@@ -96,7 +96,15 @@
         "enable" : false
     },
     "h5" : {
-        "title" : "盘古商城",
-        "domain" : "http://d.panguweb.cn"
+        "title" : "crm",
+        "domain" : "http://172.168.3.161:8098",
+        "mode" : "history",
+        "router" : {
+            "mode" : "history"
+        },
+        "devServer" : {
+            "https" : false,
+			"disableHostCheck":true
+        }
     }
 }
