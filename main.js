@@ -10,7 +10,7 @@ import FootPart from '@/components/footer.vue'
 Vue.component('foot-part',FootPart)
 // 基础url
 // var baseUrl = 'http://172.18.3.161:5000/api/1.0'
-var baseUrl = 'https://shop.pangu.mobi/api/1.0'
+var baseUrl = 'http://10.1.1.41:8098'
 Vue.prototype.$burl = baseUrl
 // 图片url
 Vue.prototype.$imgurl = 'https://shop.pangu.mobi'
@@ -29,7 +29,8 @@ export default {
 		baseUrl: baseUrl,
 		header: {
 			'Content-Type': 'application/json;charset=UTF-8',
-			'Content-Type': 'application/x-www-form-urlencoded'
+			'Content-Type': 'application/x-www-form-urlencoded',
+			
 		},
 		data: {},
 		method: "GET",
@@ -38,6 +39,7 @@ export default {
 		success() {},
 		fail() {},
 		complete() {}
+		
 	},
 	interceptor: {
 		request: null,
@@ -52,6 +54,7 @@ export default {
 		options.url = options.baseUrl + options.url
 		options.data = options.data || {}
 		options.method = options.method || this.config.method
+		
 		return new Promise((resolve, reject) => {
 			let _config = null
 			options.complete = (response) => {
