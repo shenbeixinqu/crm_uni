@@ -4,10 +4,10 @@
 		code:{{res}}
 		</view>
 		<view class="">
-			access_token接口：{{result}}
-		</view>
-		<view class="">
 			用户信息 {{userInfo}}
+		</view>
+		<view>
+			loading: {{loading}}
 		</view>
 		<!-- 跳板页面   这个界面主要用来 获取缓存的信息 如果没有缓存的信息则跳转去授权 如果有直接跳转去商城界面-->
 	</view>
@@ -22,22 +22,23 @@ export default {
 			option:'',
 			res:'',
 			userInfo:'',
-			access_token:'',
+			token:'',
 			openid:'',
-			index:0
+			index:0,
+			loading: true,
 		};
 	},
 	methods:{
 		getpower() {
 			
 			let url =
-				"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wwe6a967e2bfd97adf&redirect_uri=http%3A%2F%2Fxnsd53.natappfree.cc&response_type=code&scope=snsapi_userinfo#wechat_redirect"		
+				"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wwe6a967e2bfd97adf&redirect_uri=http%3A%2F%2Fd8vxbn.natappfree.cc&response_type=code&scope=snsapi_userinfo#wechat_redirect"		
 			window.location.href = url
 		},
 		sendCode(code){
-			uni.showToast({
-				title:code
-			})
+			// uni.showToast({
+			// 	title:code
+			// })
 			
 			uni.request({
 				url: 'HTTP://172.18.3.161:8098/api/wxlogin',
@@ -46,13 +47,37 @@ export default {
 					code: code
 				},
 				success: (userInfo) => {
-					this.userInfo = userInfo
-					console.log(userInfo);
+					this.userInfo = userInfo.data
+					var token = "asdqwerqweasdafazxasafqwqrasdafgasdafa";
+					// uni.navigateTo({
+					// 	// url:'/pages/index/index'
+					// 	url:'/pages/mine/my_index'
+					// });
+					console.log("token1",token)
+					if (this.loading){
+						this.token = token;
+						console.log("token",this.token)
+						this.$store
+							.dispatch("user/storeToken",this.token)
+							.then(() => {
+							    uni.navigateTo({
+									url:'/pages/index/index'
+								});
+								this.$store.dispatch("user/getInfo")
+							})
+							.catch(() => {
+								uni.navigateTo({
+									url:'/pages/mine/my_index'
+								});
+							})
+						
+					}
 				}
 			});
 		},
 	},
 	onLoad(option) {
+			option.code = "ajsganjgkangaaskgagain"
 			this.option = option
 			if (option.code == null) {
 				this.getpower()
@@ -63,7 +88,10 @@ export default {
 				// })
 				this.sendCode(option.code)
 			}
-		}
+		},
+	created() {
+		this.loading = true
+	}
 		
 	}
 </script>

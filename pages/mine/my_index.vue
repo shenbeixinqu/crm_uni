@@ -228,12 +228,12 @@
 			}
 		},
 		onLoad(options){
-			console.log('==============================')
-			console.log(this.login)
+			//console.log('==============================')
+			//console.log(this.login)
 			this.re_code=uni.getStorageSync("re_code")
 			this.status=uni.getStorageSync("status")
-			console.log(this.status)
-			console.log(uni.getStorageSync('superior_id'))
+			//console.log(this.status)
+			//console.log(uni.getStorageSync('superior_id'))
 			if(uni.getStorageSync("token")){
 				this.login=true
 			}else{
@@ -273,9 +273,9 @@
 				uni.request({
 					url: that.$burl+'/help_center',
 					success:(res)=>{
-						console.log(res)
+						//console.log(res)
 						that.ewm=res.data.data.result[0]
-						console.log(that.ewm)
+						//console.log(that.ewm)
 					}
 				})
 				that.helppopup=true
@@ -297,7 +297,7 @@
 			    uni.downloadFile({
 			        url: imgSrc,
 					success: function (res) {
-						console.log(res);
+						//console.log(res);
 						//图片保存到本地
 						uni.saveImageToPhotosAlbum({
 						    filePath: res.tempFilePath,
@@ -311,7 +311,7 @@
 						})
 			        },
 				    fail(res){
-					    console.log(res)
+					    //console.log(res)
 				    }
 			    })
 			},
@@ -326,7 +326,7 @@
 				let that=this;
 				uni.login({
 					success: function(loginRes) {
-						console.log(loginRes)
+						//console.log(loginRes)
 						if (loginRes.code) {
 							uni.getUserInfo({
 								success: function(infoRes) {
@@ -349,7 +349,7 @@
 										method: 'POST',
 										dataType:'json',
 										success:(res)=>{
-											console.log(res);
+											//console.log(res);
 											that.login=true
 											uni.showToast({title:res.data.msg, icon:"none"})
 											uni.setStorageSync("token", res.data.token)
@@ -364,11 +364,11 @@
 									})
 								},
 								fail: function() {
-									console.log('获取信息失败')
+									//console.log('获取信息失败')
 								}
 							});
 						} else {
-							console.log('调用wx.login获取code失败');
+							//console.log('调用wx.login获取code失败');
 						}
 					}
 				})
@@ -378,7 +378,7 @@
 			baiduGetInfo(e){
 				let that=this
 				let users=e.detail.userInfo
-				console.log(e)
+				//console.log(e)
 				uni.setStorageSync('userInfo', users)
 				var platUserInfoMap = {}
 				platUserInfoMap["encryptedData"] = e.detail.encryptedData;
@@ -400,7 +400,7 @@
 								method: 'POST',
 								dataType:'json',
 								success:(res)=>{
-									console.log(res)
+									//console.log(res)
 									that.login=true
 									uni.setStorageSync("token", res.data.token)
 									uni.setStorageSync("user_id", res.data.user_id)
@@ -425,7 +425,7 @@
 				let param = '?user_id='+user_id;
 				let res = await that.$api.commonMethod('/person_charge'+param,'GET');
 				if(res.statusCode==200&&res.data.re_code==0) {
-					console.log(res)
+					//console.log(res)
 					let da = res.data;
 					that.all = da.data.all;   //累计佣金
 					that.balance = da.data.balance;   //佣金金额
@@ -440,7 +440,7 @@
 				let param = '?user_id='+that.user_id;
 				let res = await that.$api.commonMethod('/message_num'+param,'GET');
 				if(res.statusCode==200&&res.data.re_code==0) {
-					console.log(res)
+					//console.log(res)
 					that.messagenum=res.data.num
 				}
 			},

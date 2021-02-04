@@ -74,9 +74,9 @@
 			this.getData();
 		},
 		// onShareAppMessage(res,e){
-		// 	console.log('1111111111111')
-		// 	console.log(e)
-		// 	console.log(res)
+		// 	//console.log('1111111111111')
+		// 	//console.log(e)
+		// 	//console.log(res)
 		// },
 		methods: {
 			async getData() {
@@ -84,7 +84,7 @@
 				that.type = that.type==0?'':that.type;
 				let param = '?user_id='+that.user_id+'&page='+that.nowPage+'&per_page=10';
 				let res = await that.$api.commonMethod('/my_collect'+param,'GET');
-				console.log(res)
+				//console.log(res)
 				if(res.statusCode==200&&res.data.re_code==0) {
 					let da = res.data;
 					if(da.data.collects_dict_li==0) {
@@ -135,24 +135,24 @@
 				}
 			},
 			goProdetail(v) {
-				console.log('跳转')
+				//console.log('跳转')
 				uni.navigateTo({
 					url: '../product/pro_detail?id='+v.pro_id+'&path='+this.from
 				});
 			},
 			share(e){
-				console.log('share')
-				console.log(e)
+				//console.log('share')
+				//console.log(e)
 				uni.showShareMenu({
 					title:'111',
 					content:'2222',
 					imageUrl:'https://shop.pangu.mobi/static/mobile/loginBgtop.jpg',
 					path:'pages/product/pro_detail?id='+e.pro_id,
 					success(res){
-						console.log(res)
+						//console.log(res)
 					},
 					fail(res){
-						console.log('错误了')
+						//console.log('错误了')
 					}
 				})
 			}

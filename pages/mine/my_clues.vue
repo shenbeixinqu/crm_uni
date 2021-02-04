@@ -97,7 +97,7 @@
 				that.type = that.type==0?'':that.type;
 				let param = '?user_id='+that.user_id+'&clue_status='+that.type+'&page='+that.nowPage+'&per_page=10';
 				let res = await that.$api.commonMethod('/clue_list'+param,'GET');
-				console.log(res);
+				//console.log(res);
 				if(res.statusCode==200&&res.data.re_code==0) {
 					let da = res.data;
 					if(da.data.clues_dict_li==0) {
@@ -112,7 +112,7 @@
 				that.type = that.type==0?'':that.type;
 				let param = '?user_id='+that.user_id+'&clue_status='+that.type+'&page='+that.nowPage+'&per_page=10';
 				let res = await that.$api.commonMethod('/clue_list'+param,'GET');
-				console.log(res);
+				//console.log(res);
 				if(res.statusCode==200&&res.data.re_code==0) {
 					let da = res.data;
 					if(da.data.clues_dict_li==0) {
@@ -146,7 +146,7 @@
 			// 删除过期线索
 			deletegq(item){
 				let that=this;
-				console.log(item.id)
+				//console.log(item.id)
 				uni.showModal({
 				    title: '提示',
 				    content: '确定要删除吗？',
@@ -159,8 +159,8 @@
 										clue_id:item.id
 									},
 									success:(res)=>{
-										console.log(111)
-										console.log(res)
+										//console.log(111)
+										//console.log(res)
 										uni.showToast({title:res.data.msg, icon:"none"})
 										that.getData();
 									}
@@ -178,7 +178,7 @@
 								})
 							}
 				        } else if (res.cancel) {
-				            console.log('用户点击取消');
+				            //console.log('用户点击取消');
 				        }
 				    }
 				});

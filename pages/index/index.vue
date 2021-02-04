@@ -49,7 +49,7 @@
 			}
 		},
 		onLoad(options) {
-			console.log('我是onLoad函数')
+			////console.log('我是onLoad函数')
 			this.imgurl = this.$imgurl
 			this.re_code = uni.getStorageSync("re_code")
 			this.status = uni.getStorageSync("status")
@@ -78,12 +78,12 @@
 			// this.getRecentData()
 		},
 		onShow() {
-			console.log('我是onShow函数')
+			////console.log('我是onShow函数')
 			// this.isLoginShow = false;
 			this.getRecentData()
 		},
 		onReady() {
-			console.log('我是onReady函数')
+			////console.log('我是onReady函数')
 		},
 		onReachBottom() {
 			this.getNextData();
@@ -91,7 +91,7 @@
 		methods: {
 			// 企业微信-联系我插件
 			startmessage() {
-				console.log('-----------------------')
+				////console.log('-----------------------')
 				uni.navigateTo({
 					url: '../mine/my_know'
 				})
@@ -103,7 +103,7 @@
 				uni.downloadFile({
 					url: imgSrc,
 					success: function(res) {
-						console.log(res);
+						////console.log(res);
 						//图片保存到本地
 						uni.saveImageToPhotosAlbum({
 							filePath: res.tempFilePath,
@@ -117,7 +117,7 @@
 						})
 					},
 					fail(res) {
-						console.log(res)
+						////console.log(res)
 					}
 				})
 			},
@@ -233,7 +233,7 @@
 			async getData() {
 				let that = this;
 				let res = await that.$api.commonMethod('/consult', 'GET');
-				console.log(res)
+				////console.log(res)
 				if (res.statusCode == 200 && res.data.re_code == 0) {
 					let da = res.data;
 					that.bannerList = da.data.index_advert;
@@ -297,7 +297,7 @@
 				let res = await that.$api.commonMethod('/pro_list' + param, 'GET');
 				if (res.statusCode == 200 && res.data.re_code == 0) {
 					let da = res.data;
-					console.log(da.data.pros_dict_li)
+					////console.log(da.data.pros_dict_li)
 					if (da.data.pros_dict_li == 0) {
 						that.isAll = true;
 						that.getNextData();
@@ -322,7 +322,7 @@
 				if (this.isAll) {
 					// this.showToast('已加载全部');
 					this.jz = '已加载全部'
-					console.log('已加载全部')
+					////console.log('已加载全部')
 				} else {
 					this.nowPage++;
 					this.getProData();

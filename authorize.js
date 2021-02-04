@@ -23,7 +23,7 @@ function login(){
 							method: 'POST',
 							dataType:'json',
 							success:(res)=>{
-								console.log(res)
+								////console.log(res)
 								uni.showToast({title:res.data.msg, icon:"none"})
 								uni.setStorageSync("token", res.data.token)
 								uni.setStorageSync("user_id", res.data.user_id)
@@ -31,12 +31,12 @@ function login(){
 						})
 					},
 					fail: function() {
-						console.log('获取信息失败')
+						////console.log('获取信息失败')
 					}
 				});
 			} else {
 				that.showInfo('登陆失败');
-				console.log('调用wx.login获取code失败');
+				////console.log('调用wx.login获取code失败');
 			}
 		}
 	})

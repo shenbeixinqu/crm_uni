@@ -58,7 +58,7 @@
 					type:'1'
 				},
 				success:(res)=>{
-					console.log(res)
+					//console.log(res)
 					let pics=res.data.data.result
 					let arr=[]
 					for(var i = 0;i<pics.length;i++){
@@ -79,13 +79,13 @@
 							user_id:uni.getStorageSync('user_id'),
 						},
 						success:(res)=>{
-							console.log(res)
+							//console.log(res)
 							this.peonum=res.data.data
 						}
 					})
 				},
 				fail:(err)=>{
-					console.log(err)
+					//console.log(err)
 				}
 			})
 			// #endif
@@ -97,7 +97,7 @@
 					type:'2'
 				},
 				success:(res)=>{
-					console.log(res)
+					//console.log(res)
 					let pics=res.data.data.result
 					let arr=[]
 					for(var i = 0;i<pics.length;i++){
@@ -118,13 +118,13 @@
 							user_id:uni.getStorageSync('user_id'),
 						},
 						success:(res)=>{
-							console.log(res)
+							//console.log(res)
 							this.peonum=res.data.data
 						}
 					})
 				},
 				fail:(err)=>{
-					console.log(err)
+					//console.log(err)
 				}
 			})
 			// #endif
@@ -152,7 +152,7 @@
 			
 			// towerSwiper计算滚动
 			TowerEnd(e) {
-				console.log(e)
+				//console.log(e)
 				let direction = this.direction;
 				let list = this.swiperList;
 				if (direction == 'right') {
@@ -183,7 +183,7 @@
 				let maxIndexNum=parseInt(that.swiperList.length / 2) + 1
 				for(let i = 0; i < that.swiperList.length; i++){
 					if(that.swiperList[i].zIndex==maxIndexNum){
-						console.log(that.swiperList[i])
+						//console.log(that.swiperList[i])
 						that.bgImg=that.$imgurl+that.swiperList[i].url
 					}
 				}

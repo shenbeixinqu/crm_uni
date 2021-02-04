@@ -104,7 +104,7 @@ Swiper.use({
   on: {
     init() {
       if (!this.params.pluginSwitch) return
-      console.log('init')
+      ////console.log('init')
     },
     // swiper callback...
   }
@@ -161,7 +161,7 @@ Swiper.use({
     mounted() {
       // current swiper instance
       // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
-      console.log('this is current swiper instance object', this.swiper)
+      ////console.log('this is current swiper instance object', this.swiper)
       this.swiper.slideTo(3, 1000, false)
     }
   }
@@ -193,7 +193,7 @@ Swiper.use({
     },
     mounted() {
       setInterval(() => {
-        console.log('simulate async data')
+        ////console.log('simulate async data')
         if (this.swiperSlides.length < 10) {
           this.swiperSlides.push(this.swiperSlides.length + 1)
         }
@@ -235,9 +235,9 @@ Swiper.use({
     mounted() {
       setTimeout(() => {
         this.banners.push('/4.jpg')
-        console.log('banners update')
+        ////console.log('banners update')
       }, 3000)
-      console.log(
+      ////console.log(
         'This is current swiper instance object', this.mySwiper, 
         'It will slideTo banners 3')
       this.mySwiper.slideTo(3, 1000, false)

@@ -16,9 +16,9 @@
 			pcaPicker
 		},
 		onLoad(options){
-			console.log(options)
+			////console.log(options)
 			this.addinfo=options.addinfo
-			console.log(this.addinfo)
+			////console.log(this.addinfo)
 			if(uni.getStorageSync('status')==22){
 				this.disabled=false
 			}
@@ -52,7 +52,7 @@
 						}
 					},
 					fail:(err)=>{
-						console.log(err)
+						////console.log(err)
 					}
 				})
 			}else{
@@ -69,7 +69,7 @@
 				uni.downloadFile({
 				    url: imgSrc,
 					success: function (res) {
-						console.log(res);
+						////console.log(res);
 						//图片保存到本地
 						uni.saveImageToPhotosAlbum({
 						    filePath: res.tempFilePath,
@@ -83,7 +83,7 @@
 						})
 				    },
 				    fail(res){
-					    console.log(res)
+					    ////console.log(res)
 				    }
 				})
 			},
@@ -113,7 +113,7 @@
 					uni.getLocation({
 						type: 'gcj02',
 						success:res=>{
-							console.log(res)
+							////console.log(res)
 							that.latitude=res.latitude,
 							that.longitude=res.longitude
 							uni.request({
@@ -123,7 +123,7 @@
 									lng:that.longitude
 								},
 								success:res=>{
-									console.log(res)
+									////console.log(res)
 									that.areatext=res.data.data.province+'-'+res.data.data.city,
 									that.zd=false
 								}
@@ -141,8 +141,8 @@
 			},
 			// 选择银行
 			bindPickerChange: function(e) {
-				console.log(this.array[e.target.value])
-				console.log('picker发送选择改变，携带值为', e.target.value)
+				////console.log(this.array[e.target.value])
+				////console.log('picker发送选择改变，携带值为', e.target.value)
 				this.index = e.target.value
 				this.khh = this.array[e.target.value]
 			},
@@ -162,7 +162,7 @@
 			},
 			// 选择地址
 			change(e){
-				console.log(e)
+				////console.log(e)
 				this.areatext=e[0].name+'-'+e[1].name,
 				this.popupshow=false
 			},
@@ -245,8 +245,8 @@
 						},
 						method: 'POST',
 						success:(res)=>{
-							console.log('==========================')
-							console.log(res)
+							////console.log('==========================')
+							////console.log(res)
 							uni.hideLoading()
 							if(res.data.re_code==4103){
 								uni.showToast({title:'姓名、身份证、开户行手机号、银行卡号四项信息不匹配！', icon:"none"})
@@ -285,7 +285,7 @@
 							}
 						},
 						fail:(err)=>{
-							console.log(err)
+							////console.log(err)
 						}
 					})
 				}else{    //未注册
@@ -309,8 +309,8 @@
 						},
 						method: 'POST',
 						success:(res)=>{
-							console.log('--------------------------')
-							console.log(res)
+							////console.log('--------------------------')
+							////console.log(res)
 							uni.hideLoading()
 							if(res.data.re_code==4103){
 								uni.showToast({title:'姓名、身份证、开户行手机号、银行卡号四项信息不匹配！', icon:"none"})
@@ -339,7 +339,7 @@
 							}
 						},
 						fail:(err)=>{
-							console.log(err)
+							////console.log(err)
 						}
 					})
 				}
@@ -378,7 +378,7 @@
 					},
 					method: 'POST',
 					success:(res)=>{
-						console.log(res)
+						////console.log(res)
 						uni.hideLoading()
 						if(res.data.re_code==0){
 							uni.showToast({title:res.data.msg, icon:"none"})
@@ -395,7 +395,7 @@
 						}
 					},
 					fail:(err)=>{
-						console.log(err)
+						////console.log(err)
 					}
 				})
 			},

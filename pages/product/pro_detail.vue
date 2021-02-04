@@ -117,7 +117,7 @@
 			this.getDetail();
 			// this.getData();
 			this.path=options.path
-			console.log(this.path)
+			//console.log(this.path)
 		},
 		onShow() {
 			this.user_id = uni.getStorageSync('user_id');
@@ -171,10 +171,10 @@
 			// 		that.img.push(capture);
 			// 		return '';
 			// 	});
-			// 	console.log(333,result)
+			// 	//console.log(333,result)
 			// 	var imgReg=/<img.+src=\"?(.+\.(jpg|jpeg|gif|bmp|bnp|png))\"?.+>/i;
 			// 	var imgArr=result.match(imgReg);
-			// 	console.log(imgArr[0])
+			// 	//console.log(imgArr[0])
 			// 	that.popupImgSrc=result.match(imgReg)[1];
 			// },
 			// 获取用户是否收藏该产品
@@ -229,10 +229,10 @@
 			// isWechat() {
 			// 	var ua = window.navigator.userAgent.toLowerCase();
 			// 	if(ua.match(/micromessenger/i) == 'micromessenger') {
-			// 		//console.log('是微信客户端')
+			// 		////console.log('是微信客户端')
 			// 		return true;
 			// 	}else{
-			// 		//console.log('不是微信客户端')
+			// 		////console.log('不是微信客户端')
 			// 		return false;
 			// 	}
 			// },

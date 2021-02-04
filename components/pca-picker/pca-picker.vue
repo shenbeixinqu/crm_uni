@@ -161,7 +161,7 @@ export default {
 						},
 						success:res=>{
 							that.location=res.data.data.province+'-'+res.data.data.city,
-							console.log(this.location)
+							////console.log(this.location)
 							this.$emit('getChild',this.location)
 						}
 					})

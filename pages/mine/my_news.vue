@@ -37,14 +37,14 @@
 		},
 		onLoad(options){
 			this.user_id=uni.getStorageSync("user_id")
-			console.log(uni.getStorageSync("user_id"))
+			//console.log(uni.getStorageSync("user_id"))
 			uni.request({
 				url:this.$burl+'/message_num',
 				data:{
 					user_id:this.user_id,
 				},
 				success:(res)=>{
-					console.log(res)
+					//console.log(res)
 					this.news=res.data.data.messages
 					uni.request({
 						url:this.$burl+'/message_readed',     //读消息
@@ -52,7 +52,7 @@
 							user_id:this.user_id
 						},
 						success:(res)=>{
-							console.log(res)
+							//console.log(res)
 						}
 					})
 				}

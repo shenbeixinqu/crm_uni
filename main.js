@@ -8,6 +8,7 @@ App.mpType = 'app'
 // 底部footer
 import FootPart from '@/components/footer.vue'
 Vue.component('foot-part',FootPart)
+import store from './store'
 // 基础url
 // var baseUrl = 'http://172.18.3.161:5000/api/1.0'
 var baseUrl = 'https://shop.pangu.mobi/api/1.0'
@@ -16,6 +17,7 @@ Vue.prototype.$burl = baseUrl
 Vue.prototype.$imgurl = 'https://shop.pangu.mobi'
 // Vue.prototype.$imgurl = 'http://172.18.3.161:5000'
 const app = new Vue({
+	store,
     ...App
 })
 app.$mount()
@@ -120,9 +122,9 @@ export default {
  */
 function _reqlog(req) {
 	if (process.env.NODE_ENV === 'development') {
-		console.log("【" + req.requestId + "】 地址：" + req.url)
+		////console.log("【" + req.requestId + "】 地址：" + req.url)
 		if (req.data) {
-			console.log("【" + req.requestId + "】 请求参数：" + JSON.stringify(req.data))
+			////console.log("【" + req.requestId + "】 请求参数：" + JSON.stringify(req.data))
 		}
 	}
 }

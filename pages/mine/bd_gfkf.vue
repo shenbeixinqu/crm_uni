@@ -31,7 +31,7 @@
 		},
 		created () {
 			// const demo = uni.getMenuButtonBoundingClientRect()
-			// console.log(demo)
+			// //console.log(demo)
 			// this.demo.top = demo.top
 			// this.demo.height = demo.height+demo.top,
 			// this.demo.returntop=demo.height
@@ -40,8 +40,8 @@
 			let that=this
 			uni.getSystemInfo({
 				success: function(e) {
-					console.log('1111111111')
-					console.log(e)
+					//console.log('1111111111')
+					//console.log(e)
 					that.statusBar=e.statusBarHeight;   // 状态栏的高度
 					that.platform=e.platform;
 					// customBar为导航栏高度+状态栏高度  一般安卓导航栏为50，ios为45
@@ -52,7 +52,7 @@
 						that.customBar = e.statusBarHeight + 45;
 						that.dhHeight=45
 					}
-					console.log(that.customBar)
+					//console.log(that.customBar)
 				}
 			})
 		},

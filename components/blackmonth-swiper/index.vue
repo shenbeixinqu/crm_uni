@@ -42,7 +42,7 @@
 		methods: {
 			getStyle(e) {
 				if (e > this.swiperList.length / 2) {
-					console.log('e > this.swiperList.length / 2')
+					////console.log('e > this.swiperList.length / 2')
 					var right = this.swiperList.length - e
 					return {
 						transform: 'scale(' + (1 - right / 10) + ') translate(-' + (right * 9) + '%,0px)',
@@ -65,11 +65,11 @@
 				var newList = JSON.parse(JSON.stringify(this.itemStyle))
 				if ((e.changedTouches[0].pageX - this.slideNote.x) < 0) {
 					// 向左滑动
-					console.log('向左滑动')
-					console.log(e.currentTarget.dataset.index+1)
-					console.log(e.currentTarget.dataset.url)
+					////console.log('向左滑动')
+					////console.log(e.currentTarget.dataset.index+1)
+					////console.log(e.currentTarget.dataset.url)
 					this.index=e.currentTarget.dataset.index
-					console.log(this.swiperList[this.index+1])
+					////console.log(this.swiperList[this.index+1])
 					// this.$emit("getChild",this.swiperList[this.index]);
 					// this.$emit("getChild",this.swiperList[this.index+1]);
 					this.$emit("getChild",this.index);
@@ -77,9 +77,9 @@
 					newList = last.concat(newList)
 				} else {
 					// 向右滑动
-					console.log('向右滑动')
-					console.log(e.currentTarget.dataset.index+1)
-					console.log(e.currentTarget.dataset.url)
+					////console.log('向右滑动')
+					////console.log(e.currentTarget.dataset.index+1)
+					////console.log(e.currentTarget.dataset.url)
 					this.index=e.currentTarget.dataset.index
 					this.$emit("getChild",this.swiperList[this.index-1]);
 					newList.push(newList[0])

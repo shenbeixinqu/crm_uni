@@ -225,7 +225,7 @@
 			},
 			// 选择地址
 			change(e){
-				console.log(e)
+				////console.log(e)
 				this.areatext=e[0].name+'-'+e[1].name,
 				this.popupshow=false
 			},
@@ -307,7 +307,7 @@
 					});
 					let param = '?com_name='+that.company+'&client_name='+that.people+'&client_tel='+that.phone+'&com_city='+that.areatext+'&user_id='+that.user_id;
 					let res = await that.$api.commonMethod('/clue_add'+param,'GET');
-					console.log(res);
+					////console.log(res);
 					// if(res.statusCode==200&&res.data.re_code==0) {
 					// 	let da = res.data;
 					// 	that.resultType = res.data.status;
@@ -318,7 +318,7 @@
 						uni.hideLoading()
 						that.isResultShow = true;
 					},1000)
-					console.log(that.resultType)
+					////console.log(that.resultType)
 				}
 			},
 			showToast(title) {

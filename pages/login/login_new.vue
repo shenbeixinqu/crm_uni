@@ -50,7 +50,7 @@
 		onLoad(options){
 			this.path=options.path
 			this.proid=options.id
-			console.log(this.path)
+			////console.log(this.path)
 		},
 		methods:{
 			// #ifdef MP-WEIXIN
@@ -86,7 +86,7 @@
 											uni.setStorageSync("user_id", res.data.user_id)
 											uni.setStorageSync("status", res.data.status)
 											uni.setStorageSync("type", "1")
-											console.log('status---'+uni.getStorageSync("status"))
+											////console.log('status---'+uni.getStorageSync("status"))
 											if(that.path==2){
 												uni.navigateBack()
 											}else if(that.path==1){
@@ -102,12 +102,12 @@
 									})
 								},
 								fail: function() {
-									console.log('获取信息失败')
+									//('获取信息失败')
 								}
 							});
 						} else {
 							that.showInfo('登陆失败');
-							console.log('调用wx.login获取code失败');
+							////console.log('调用wx.login获取code失败');
 						}
 					}
 				})
@@ -138,7 +138,7 @@
 								method: 'POST',
 								dataType:'json',
 								success:(res)=>{
-									console.log(res)
+									////console.log(res)
 									that.login=true
 									uni.showToast({title:res.data.msg, icon:"none"})
 									uni.setStorageSync("token", res.data.token)

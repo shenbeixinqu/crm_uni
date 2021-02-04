@@ -225,7 +225,7 @@
 				let that = this;
 				let param = '?user_id='+that.user_id;
 				let res = await that.$api.commonMethod('/income_detail'+param,'GET');
-				console.log(res)
+				//console.log(res)
 				if(res.statusCode==200&&res.data.re_code==0) {
 					let da = res.data;
 					that.list1 = da.data.Issuing_one_list;   //发放中一级佣金列表

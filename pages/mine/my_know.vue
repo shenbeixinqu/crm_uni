@@ -24,7 +24,7 @@
 			uni.request({
 				url: that.$burl+'/help_center',
 				success:(res)=>{
-					console.log(res)
+					//console.log(res)
 					that.ewm=res.data.data.result[0]
 				}
 			})
@@ -39,7 +39,7 @@
 				uni.downloadFile({
 				    url: imgSrc,
 					success: function (res) {
-						console.log(res);
+						//console.log(res);
 						//图片保存到本地
 						uni.saveImageToPhotosAlbum({
 						    filePath: res.tempFilePath,
@@ -53,7 +53,7 @@
 						})
 				    },
 				    fail(res){
-					    console.log(res)
+					    //console.log(res)
 				    }
 				})
 			}
